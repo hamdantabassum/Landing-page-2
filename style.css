@@ -122,6 +122,14 @@ body {
 .btn-primary:hover {
     background-color: #2e2f3a;
 }
+@media (max-width: 768px) {
+    /* Navbar ko column mein change karna */
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+}
 
 /* Image/Illustration Styling */
 .hero-image {
@@ -1240,4 +1248,11 @@ body {
 .footer-footer a {
     color: white;
     margin-left: 20px;
+}
+@media (max-width: 992px) {
+    .footer-body {
+        flex-direction: column; /* Contact aur Newsletter ko upar-niche karne ke liye */
+        align-items: flex-start;
+        gap: 40px;
+    }
 }
