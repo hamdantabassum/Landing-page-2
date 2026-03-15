@@ -72,10 +72,41 @@ body {
     color: #fff;
 }
 
-
 body {
     background-color: #ffffff;
     color: #000000;
+}
+@media screen and (max-width: 740px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column; /* Sab kuch vertical line mein lane ke liye */
+        align-items: flex-start; /* Sab kuch Left se shuru hoga */
+    }
+
+    .nav-links {
+        display: flex; /* Links ko dikhane ke liye */
+        flex-direction: column; /* Ek ke niche ek */
+        margin-left: 0; /* Laptop wala 'auto' margin khatam karne ke liye */
+        padding-left: 0; /* Extra gap hatane ke liye */
+        padding-top: 20px;
+        gap: 15px;
+        width: 100%;
+        text-align: left; /* Text ko left align karne ke liye */
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-button {
+        margin-top: 20px;
+        width: 100%; /* Button ko full width dena hai to */
+    }
+
+    .btn-quote {
+        display: inline-block;
+        width: auto; /* Agar button chota rakhna hai to auto, varna 100% */
+    }
 }
 
 .container {
@@ -123,14 +154,8 @@ body {
 .btn-primary:hover {
     background-color: #2e2f3a;
 }
-@media (max-width: 768px) {
-    /* Navbar ko column mein change karna */
-    .navbar {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-}
+
+
 
 /* Image/Illustration Styling */
 .hero-image {
@@ -143,13 +168,75 @@ body {
     height: auto;
 }
 
-/* Responsive Design for Mobile */
-@media (max-width: 968px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
+@media screen and (max-width: 740px) {
+    /* 1. Body aur Navbar ki extra space khatam karne ke liye */
+    body {
+        padding: 0; 
+        margin: 0;
     }
+
+    .navbar {
+        padding: 15px 10px; /* Side padding kam kar di */
+        flex-direction: column;
+        align-items: flex-start; /* Items ko bilkul left mein chipka diya */
+    }
+
+    /* 2. Nav links jo aage se start ho rahe hain unhe reset kiya */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0 0 0; /* Left margin zero kar di */
+        padding: 0; /* Browser ki default padding khatam */
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 5px 0;
+        text-align: left;
+    }
+
+    /* 3. Hero Section alignment */
+    .container {
+        padding: 30px 15px; /* Container ki side space kam ki */
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0; /* Isse content page ke shuru mein aa jayega */
+        width: 100%;
+    }
+
+    .hero-text {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .hero-text p {
+        margin-left: 0;
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    /* 4. Image adjustment */
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start; /* Image ko bhi left align kiya */
+        margin-top: 20px;
+    }
+
+    .main-img {
+        max-width: 100%;
+        height: auto;
+    }
+}
 
     .hero-text h1 {
         font-size: 2.5rem;
@@ -160,20 +247,6 @@ body {
     }
 
 
-/* .logo-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.logo-container img {
-  height: auto;
-  width: 120px; /* Adjust as needed */
-} */
 
 .logo-strip {
     width: 100%;
@@ -215,13 +288,46 @@ body {
   color: #000000;
   max-width: 600px;
   margin: 0;}
+@media (max-width: 740px) {
+    /* Logo Strip ko responsive banaya */
+    .logo-strip {
+        padding: 30px 10px;
+    }
 
-  @media (max-width: 768px) {
-  .services-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
+    .logo-container {
+        display: flex;
+        flex-wrap: wrap; /* Logos ko doosri line mein aane ki ijazat di */
+        justify-content: center; /* Center mein align kiya */
+        gap: 30px; /* Logos ke darmiyan barabar fasla */
+    }
+
+    .logo-container img {
+        height: 25px; /* Mobile par bade logos bure lagte hain, thoda chota kiya */
+        width: auto;
+    }
+
+    /* Services Section ka huliya thik kiya */
+    .services-container {
+        flex-direction: column; /* Badge upar, text neeche */
+        align-items: center;    /* Sab kuch center mein */
+        text-align: center;     /* Text bhi center */
+        margin-left: 0;        /* Jo 50px margin tha usko khatam kiya mobile pe */
+        transform: translateY(40px); /* 100px mobile ke liye boht zyada tha */
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .services-badge {
+        font-size: 28px; /* 42px mobile par boht bada hai, isse thoda kam kiya */
+        white-space: normal; /* Agar text bada ho to wrap ho jaye */
+        display: inline-block;
+    }
+
+    .services-text {
+        font-size: 16px; /* Text thoda readable kiya */
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
  
 .container {
@@ -308,12 +414,65 @@ h3 {
     object-fit: contain;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+@media (max-width: 740px) {
+    /* 1. Services Header (Badge + Text) */
+    .services-container {
+        flex-direction: column; 
+        align-items: center;    
+        text-align: center;     
+        margin-left: 0;         /* Side margin khatam */
+        width: 100%;            /* Poori width cover kare */
+        transform: translateY(40px); 
+        padding: 20px;          /* Thodi si breathing space side par */
+        gap: 20px;
+    }
+
+    .services-badge {
+        font-size: 28px;        
+        white-space: normal;
+        display: inline-block;
+    }
+
+    .services-text {
+        font-size: 16px;
+        max-width: 100%;        /* Text ko poori width di */
+        margin: 0;
+    }
+
+    /* 2. Cards Container (The Grid) */
     .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Ek line mein ek hi card */
+        margin-left: 0;            /* 50px margin khatam */
+        margin-right: 0;
+        width: 100%;               /* Full width */
+        padding: 20px;             /* Screen ke edges se chipke nahi */
+        max-width: 100%;           /* Container ko khol diya */
+        gap: 25px;                 /* Cards ke darmiyan fasla */
+    }
+
+    /* 3. Individual Card Adjustments */
+    .card {
+        padding: 30px 20px;        /* Padding thodi kam ki mobile ke liye */
+        flex-direction: row;       /* Card ke andar image aur text ek hi line mein rahein */
+        justify-content: space-between;
+        border-radius: 30px;       /* Thoda kam round */
+    }
+
+    h3 {
+        font-size: 18px;           /* Heading size chota kiya */
+        margin-bottom: 20px;
+    }
+
+    .image-box {
+        width: 100px;              /* Image size mobile ke hisaab se adjust */
+        height: 100px;
+    }
+
+    .learn-more span {
+        display: none;             /* Mobile par sirf arrow icon dikhega (optional) */
     }
 }
+
 
 .cta-card {
     border: 1px solid #000;
@@ -802,17 +961,51 @@ h3 {
     background-color: #b9ff66;
     color: #191a23;
 }
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
+@media (max-width: 740px) {
+    /* Container ko poori width di aur padding balance ki */
     .team-grid {
-        grid-template-columns: 1fr;
-    }
-    .team-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Saare cards ko horizontally center karega */
         justify-content: center;
+        margin: 0 !important; 
+        padding: 20px 0; /* Oopar neeche space, sides zero */
+        width: 100% !important;
     }
-    
-    
+
+    /* Card ko center kiya */
+    .team-card {
+        width: 90%; /* Screen ke dono taraf thodi barabar jagah chori */
+        margin: 0 auto 20px auto !important; /* Auto margin se card center ho jayega */
+        float: none; /* Agar pehle se float laga ho toh khatam */
+        display: block;
+        box-sizing: border-box;
+    }
+
+    /* Card ke andar ka content bhi balance kiya */
+    .card-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Image aur text ko card ke andar center kiya */
+        text-align: center;
+    }
+
+    .member-info {
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    /* Button ko bhi center kar diya */
+    .team-footer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 20px 0 !important;
+    }
+
+    .see-all-btn {
+        margin: 0 auto;
+    }
 }
 
 /* Container styling */
@@ -1250,10 +1443,70 @@ body {
     color: white;
     margin-left: 20px;
 }
-@media (max-width: 992px) {
+@media (max-width: 740px) {
+    .footer {
+        padding: 40px 20px; /* Side spacing kam ki */
+        border-radius: 0;   /* Mobile par border-radius aksar bura lagta hai, 0 kar diya */
+        text-align: center; /* Sab kuch center karne ke liye */
+    }
+
+    /* Header: Logo aur Socials ko stack kiya */
+    .footer-header {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column; /* Menu items upar neeche */
+        gap: 15px;
+    }
+
+    .nav a {
+        margin: 0;
+    }
+
+    /* Body: Contact aur Newsletter */
     .footer-body {
-        flex-direction: column; /* Contact aur Newsletter ko upar-niche karne ke liye */
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center; 
         gap: 40px;
+        width: 100%;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Contact info center */
+    }
+
+    /* Newsletter Box: Isko poora phailaya */
+    .newsletter {
+        flex-direction: column;
+        width: 100%;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .newsletter input {
+        width: 100%; /* Email box poori width pe */
+    }
+
+    .newsletter button {
+        width: 100%; /* Button bhi poora phail jaye */
+    }
+
+    /* Bottom: Copyright area */
+    .footer-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+
+    .footer-footer a {
+        margin-left: 0;
     }
 }
